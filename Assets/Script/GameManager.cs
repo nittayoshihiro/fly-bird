@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; //TextMeshProUGUI用
 
 /// <summary>
 /// ゲーム全体を管理するクラス。
@@ -21,8 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] string m_titleSceneName = "Title";
     /// <summary>EnemyGenerator を保持しておく変数</summary>
     EnemyGenerator m_enemyGenerator;
-    /// <summary>スコア表示用 Text</summary>
-    [SerializeField] UnityEngine.UI.Text m_scoreText;
+    /// <summary>スコア表示用 TextMeshProUGUI</summary>
+    [SerializeField] TextMeshProUGUI m_scoreText;
     //スコア移動法
     public static int scorepoint = 0;
     /// <summary>タイマー</summary>

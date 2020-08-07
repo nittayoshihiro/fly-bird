@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; //TextMeshProUGUI用
 
 public class Result : MonoBehaviour
 {
-    [SerializeField] UnityEngine.UI.Text m_scoreText;
-    [SerializeField] UnityEngine.UI.Text m_rankText;
+    [SerializeField] TextMeshProUGUI m_scoreText;
+    [SerializeField] TextMeshProUGUI m_rankText;
     // Start is called before the first frame update
     void Start()
     {
