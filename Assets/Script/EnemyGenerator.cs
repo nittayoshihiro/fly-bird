@@ -10,14 +10,17 @@ public class EnemyGenerator : MonoBehaviour
 {
     /// <summary>敵として生成するプレハブの配列</summary>
     [SerializeField] GameObject[] m_enemyPrefabs;
-    [SerializeField] int ram;
+    /// <summary>ランダム変数</summary>
+    int ram;
     /// <summary>敵のプレハブの配列に使うインデックス</summary>
     int m_index;
     /// <summary>オンにしておくと、実行と同時に生成を始める</summary>
     [SerializeField] bool m_playOnStart = true;
     /// <summary>動作中フラグ</summary>
     bool m_isWorking;
-    float EnemyTime;
+    /// <summary>何秒ごとに生成k</summary>
+    [SerializeField] int EnemyTime = 5;
+    float m_Time;
 
     void Start()
     {
@@ -26,47 +29,52 @@ public class EnemyGenerator : MonoBehaviour
         {
             StartGeneration();
         }
-        m_index = m_enemyPrefabs.Length;
+        m_index = 0;
     }
 
     void Update()
     {
-        EnemyTime += Time.deltaTime;
-        if (EnemyTime > 3)　//3秒ごとに実行
+        m_Time += Time.deltaTime;
+        if (m_Time > EnemyTime)　//何秒(EnemyTime)ごとに実行
         {
-            ram = Random.Range(0, m_index); //ランダム
-            GameObject go = Instantiate(m_enemyPrefabs[ram], gameObject.transform.position, m_enemyPrefabs[ram].transform.rotation);    // 配列からプレハブを一つインスタンス化する
+            ram = Random.Range(0, 3);//0から3のランダム
+            Debug.Log(ram);
+            switch (ram)
+            {
+                case 0:
+                    if (m_index != 0)//インデックスが最小の場合変更しない
+                    {
+                        m_index--;
+                    }
+                    break;
+                case 1:
+                    if (m_index == 0)
+                    {
+                        m_index++;
+                    }
+                    break;
+                case 2:
+                    if (m_index != m_enemyPrefabs.Length)//インデックスが最大の場合変更しない
+                    {
+                        m_index++;
+                    }
+                    break;
+              
+            }
+            GameObject go = Instantiate(m_enemyPrefabs[m_index], gameObject.transform.position, m_enemyPrefabs[m_index].transform.rotation);    // 配列からプレハブを一つインスタンス化する
             go.transform.SetParent(this.transform); // インスタンス化したオブジェクトを自分の子供にする
-            //m_index = (m_index + 1) % m_enemyPrefabs.Length;    // インデックスを一つ進める
-            EnemyTime = 0;
+            m_Time = 0;
         }
-
-
-        //動作中でない時は何もしない
-        //if (!m_isWorking) return;
-
-        //敵が一体もいない時は
-        //if (GameObject.FindObjectsOfType<RedSlimeController>().Length < 1 && GameObject.FindObjectsOfType<GreenSlimeController>().Length < 1 && GameObject.FindObjectsOfType<YellowSlimeController>().Length < 1)
-        //{
-        //    DestroyChildren();  // 生成したオブジェクトをクリアする
-        //    GameObject go = Instantiate(m_enemyPrefabs[m_index], gameObject.transform.position, m_enemyPrefabs[m_index].transform.rotation);    // 配列からプレハブを一つインスタンス化する
-        //    go.transform.SetParent(this.transform); // インスタンス化したオブジェクトを自分の子供にする
-        //    m_index = (m_index + 1) % m_enemyPrefabs.Length;    // インデックスを一つ進める
-        //}
     }
 
-    /// <summary>
-    /// 敵の生成を開始する
-    /// </summary>
+    /// <summary>敵の生成を開始する</summary>
     public void StartGeneration()
     {
         // フラグを立てる
         m_isWorking = true;
     }
 
-    /// <summary>
-    /// 子オブジェクトを全て破棄する
-    /// </summary>
+    /// <summary>子オブジェクトを全て破棄する</summary>
     //void DestroyChildren()
     //{
     //    Transform[] txes = transform.GetComponentsInChildren<Transform>();
@@ -79,9 +87,7 @@ public class EnemyGenerator : MonoBehaviour
     //    }
     //}
 
-    /// <summary>
-    /// 敵の生成を停止する
-    /// </summary>
+    /// <summary>敵の生成を停止する</summary>
     public void StopGeneration()
     {
         // フラグを倒す

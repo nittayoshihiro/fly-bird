@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Block
+  - Pole
   - Score
+  - Crash
   layers:
   - Default
   - TransparentFX

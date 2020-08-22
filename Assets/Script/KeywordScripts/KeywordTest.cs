@@ -2,12 +2,12 @@
 using System.Text;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
-
+[RequireComponent(typeof(PlayerController))]
 public class KeywordTest : MonoBehaviour
 {
+    PlayerController m_playerController;
     private KeywordController keyCon;
     private string[][] keywords;
-
     // Use this for initialization
     void Start()
     {
@@ -34,42 +34,19 @@ public class KeywordTest : MonoBehaviour
         if (keyCon.hasRecognized[1])
         {
             Debug.Log("keyword[1] was recognized");
-            Magic1();
+            Fall();
             keyCon.hasRecognized[1] = false;
         }
-        if (keyCon.hasRecognized[2])
-        {
-            Debug.Log("keyword[2] was recognized");
-            Magic2();
-            keyCon.hasRecognized[2] = false;
-        }
-        if (keyCon.hasRecognized[3])
-        {
-            Debug.Log("keyword[3] was recognized");
-            shield();
-            keyCon.hasRecognized[3] = false;
-        }
-
 
     }
 
     void Fry()
     {
-        
+        m_playerController.m_flyVoice = true;
     }
 
-    void Magic1()
+    void Fall()
     {
         
-    }
-
-    void Magic2()
-    {
-
-    }
-
-    void shield()
-    {
-
     }
 }

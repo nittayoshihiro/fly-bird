@@ -8,16 +8,16 @@ Sprite Pack #1 - Tap and Fly 1.1.0
 
 	Features:
 
-		ÅEPixel-art textures for sprites and UIs.
-		ÅEThree graphic themes.
-		ÅESample layouts and screenshots.
-		ÅESample sounds.
+		ï Pixel-art textures for sprites and UIs.
+		ï Three graphic themes.
+		ï Sample layouts and screenshots.
+		ï Sample sounds.
 
-		ÅESupport all build player platforms.
+		ï Support all build player platforms.
 		
 	Compatible:
 
-		ÅEUnity 5.5.1 or higher.
+		ï Unity 5.5.1 or higher.
 
 	Product page:
 	
@@ -37,22 +37,22 @@ Release notes
 
 	Version 1.1.0
 
-		ÅEUnity 5.5.1 or higher compatible.
+		ï Unity 5.5.1 or higher compatible.
 
 	Version 1.0.8
 
-		ÅEUnity 5.4.0 or higher compatible.
+		ï Unity 5.4.0 or higher compatible.
 
 	Version 1.0.6
 
-		ÅEUnity 4.7.1 or higher compatible.
-		ÅEUnity 5.3.4 or higher compatible.
+		ï Unity 4.7.1 or higher compatible.
+		ï Unity 5.3.4 or higher compatible.
 
 	Version 1.0.5
 	
-		ÅEFixed GUID conflict with other packages.
-		ÅEUnity 4.6.9 or higher compatible.
-		ÅEUnity 5.3.2 or higher compatible.
+		ï Fixed GUID conflict with other packages.
+		ï Unity 4.6.9 or higher compatible.
+		ï Unity 5.3.2 or higher compatible.
 
 	Version 1.0
 

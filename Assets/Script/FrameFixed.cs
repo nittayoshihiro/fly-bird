@@ -7,17 +7,5 @@ public class FrameFixed : MonoBehaviour
     static void OnRuntimeMethodLoad()
     {
         Screen.SetResolution(400, 640, false, 60);
-
     }
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
 }

@@ -119,8 +119,13 @@ MonoBehaviour:
   power: 4
   m_downEffect: {fileID: 1444771409764117845, guid: 1e4e92c160c5fc64283d98e9818becee,
     type: 3}
-  sound1: {fileID: 8300000, guid: d9d88089ad7524578b2ea096abedc7c8, type: 3}
   point: 10
+  invincible: 0
+  m_sleepObject: []
+  Fiy_sound: {fileID: 8300000, guid: d9d88089ad7524578b2ea096abedc7c8, type: 3}
+  Crash_sound: {fileID: 8300000, guid: af2ca5569671a459b90f25803b7c7b63, type: 3}
+  Score_sound: {fileID: 8300000, guid: f2882c866e72c4440a6de6d9326f5a79, type: 3}
+  m_pole: 1
 --- !u!50 &4754378416441127328
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +175,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

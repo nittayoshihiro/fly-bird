@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             // {
             case GameState.Initialized:
                 m_timer += Time.deltaTime;
-                if (m_timer > m_waitTimeUntilGameStarts)    // 待つ
+                if (m_timer > m_waitTimeUntilGameStarts)    // 待つ/
                 {
                     m_timer = 0f;   // タイマーをリセットする
                     m_status = GameState.InGame;   // ステータスをゲーム中にする
@@ -88,16 +88,21 @@ public class GameManager : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// スコアを加算する
-    /// </summary>
+    /// <summary>スコアを加算する</summary>
     /// <param name="score"></param>
     public void AddScore(int score)
     {
         Debug.Log("スコア");
             m_score += score;
             scorepoint += score;
-        m_scoreText.text = "Score: " + m_score.ToString("d0");
+        if (m_score <99999)//9999まで表示する
+        {
+            m_scoreText.text = "Score: " + m_score.ToString("d0");
+        }
+        else
+        {
+            m_scoreText.text = "Score: " + m_score.ToString("99999");
+        }
     }
 
     /// <summary>
