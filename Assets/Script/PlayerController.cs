@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource; //AudioSource 変数にする
     Rigidbody2D m_rd2; //変数として使う
     public bool m_pole = true;//オブジェクトの移動on,off
-    public bool m_flyVoice = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +31,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)||m_flyVoice)　//クリックされたら
+        if (Input.GetMouseButtonDown(0))　//クリックされたら
         {
             Debug.Log("タッチされました");
             m_rd2.velocity = Vector2.up * power; //力を加える
             audioSource.PlayOneShot(Fiy_sound);　//サウンドを流す（効果音）
-            m_flyVoice = false;
         }
+    }
+
+    public void  Fly()
+    {
+        Debug.Log("飛びます");
+        m_rd2.velocity = Vector2.up * power; //力を加える
+        audioSource.PlayOneShot(Fiy_sound);　//サウンドを流す（効果音）
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

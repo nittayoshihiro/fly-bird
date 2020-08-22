@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1638518585037876370}
   - component: {fileID: 1638518585037876371}
   - component: {fileID: 1638518585037876368}
+  - component: {fileID: -9097396305827759271}
   - component: {fileID: 6592066982372972817}
   - component: {fileID: 4754378416441127328}
   - component: {fileID: 502833513219976596}
@@ -104,6 +105,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-9097396305827759271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638518585037876369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cbbdbeb11768e243b94a643006b9f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6592066982372972817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,12 +133,12 @@ MonoBehaviour:
   m_downEffect: {fileID: 1444771409764117845, guid: 1e4e92c160c5fc64283d98e9818becee,
     type: 3}
   point: 10
-  invincible: 0
-  m_sleepObject: []
+  invincible: 1
   Fiy_sound: {fileID: 8300000, guid: d9d88089ad7524578b2ea096abedc7c8, type: 3}
   Crash_sound: {fileID: 8300000, guid: af2ca5569671a459b90f25803b7c7b63, type: 3}
   Score_sound: {fileID: 8300000, guid: f2882c866e72c4440a6de6d9326f5a79, type: 3}
   m_pole: 1
+  m_flyVoice: 0
 --- !u!50 &4754378416441127328
 Rigidbody2D:
   serializedVersion: 4

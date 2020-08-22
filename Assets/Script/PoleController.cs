@@ -20,11 +20,11 @@ public class PoleController : MonoBehaviour
         GameObject name = GameObject.Find("Player(Clone)"); //Playerという名のゲームオブジェクトを探す
         if (name)
         {
-            Debug.Log(name);
+            //Debug.Log(name);
             PlayerController get = name.GetComponent<PlayerController>(); //Playerrという名のゲームオブジェクトからPlayerControllerのコンポーネント
             if (get)
             {
-                Debug.Log(get.m_pole);
+                //Debug.Log(get.m_pole);
                 if (get.m_pole)
                 {
                     this.gameObject.transform.Translate(-0.03f, 0, 0); //X 軸に移動

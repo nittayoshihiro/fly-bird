@@ -20,6 +20,8 @@ public class KeywordTest : MonoBehaviour
         keyCon.StartRecognizing(0);//シーン中で音声認識を始めたいときに呼び出す
         keyCon.StartRecognizing(1);
 
+        m_playerController = GetComponent < PlayerController>();
+
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class KeywordTest : MonoBehaviour
 
     void Fry()
     {
-        m_playerController.m_flyVoice = true;
+        m_playerController.Fly();
     }
 
     void Fall()
