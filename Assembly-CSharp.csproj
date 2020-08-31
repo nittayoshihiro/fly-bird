@@ -75,6 +75,7 @@
     <Compile Include="Assets\Script\ScenesLoader\Fader.cs" />
     <Compile Include="Assets\Script\ScenesLoader\Initiate.cs" />
     <Compile Include="Assets\Script\ScenesLoder.cs" />
+    <Compile Include="Assets\Script\ScoreManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
