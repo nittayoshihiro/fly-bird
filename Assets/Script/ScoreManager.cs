@@ -38,8 +38,8 @@ public class ScoreManager : MonoBehaviour
         // テキストの表示を入れ替える
         //score_text.text = "Score:" + score_num;
         //score_num += 1; // とりあえず1加算し続けてみる
-        score_text.text = "1," + scoreRanking1+"\n" 
-            + "2," + scoreRanking2 + "\n"
-            + "3," + scoreRanking3;
+        score_text.text = "1," + scoreRanking1+"\n" + "2," + scoreRanking2 + "\n" +"3," + scoreRanking3;
+
+
     }
 }

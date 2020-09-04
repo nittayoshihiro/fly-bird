@@ -7,7 +7,7 @@ public class Result : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_scoreText;
     [SerializeField] TextMeshProUGUI m_rankText;
-    ScoreManager m_scoreManager;
+    [SerializeField] ScoreManager m_scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,25 +32,43 @@ public class Result : MonoBehaviour
             m_rankText.text = "C";
         }
         //順位管理
-        var ranking = new List<int>();
+        List<int> ranking = new List<int>();
         ranking.Add(m_scoreManager.scoreRanking1);
         ranking.Add(m_scoreManager.scoreRanking2);
         ranking.Add(m_scoreManager.scoreRanking3);
-        foreach (var item in ranking)
+        ranking.Add(resultHitpoint);
+        //ソート
+        for (int i = 0; i < 4; i++)
         {
-            if (item < resultHitpoint)//スコアが高かったら
+            for (int j = 0; j < 4; j++)
             {
-                //ranking[?] = resultHitpoint;
-                break;
+                if((j > 0) && (ranking[j - 1] > ranking[j]))
+                {
+                    Swap( ranking[j - 1], ranking[j]);
+                }
+                else
+                {
+                    break;
+                }
             }
         }
         ranking.RemoveAt(4);//四番目は削除
-        
-    }
 
+        m_scoreManager.scoreRanking1 += ranking[1];
+        m_scoreManager.scoreRanking2 += ranking[2];
+        m_scoreManager.scoreRanking3 += ranking[3];
+
+
+    }
+    void Swap(int x,  int y)
+    {
+        int tmp;
+        tmp = x;
+        x = y;
+        y = tmp;
+    }
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
