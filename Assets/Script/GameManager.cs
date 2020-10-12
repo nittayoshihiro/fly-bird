@@ -132,9 +132,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void GameOver()
     {
-        //Time.timeScale = 0;
-        Debug.Log("Game over. Return to title scene.");
-        Initiate.Fade(m_titleSceneName, Color.black, 1.0f); // タイトル画面に戻る
+        Initiate.Fade(m_titleSceneName, Color.black, 0.5f); // タイトル画面に戻る
     }
 }
 
