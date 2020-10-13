@@ -144,9 +144,9 @@ public class Result : MonoBehaviour
         Debug.Log(json);
        　newList = JsonHelper.FromJson<RankingData>(json);
         //ランキングを表示
-        m_rankingText.text = "1." + newList[0].playerName + newList[0].score
-            + "\n2." + newList[1].playerName + newList[1].score
-            + "\n3." + newList[2].playerName + newList[2].score;
+        m_rankingText.text = "1." + newList[0].playerName +": " + newList[0].score
+            + "\n2." + newList[1].playerName + ": " + newList[1].score
+            + "\n3." + newList[2].playerName + ": " + newList[2].score;
 
        
 
@@ -163,9 +163,9 @@ public class Result : MonoBehaviour
         Debug.Log(json);
         newList = JsonHelper.FromJson<RankingData>(json);
         //ランキングを表示
-        m_rankingText.text = "1." + newList[0].playerName + newList[0].score
-            + "\n2." + newList[1].playerName + newList[1].score
-            + "\n3." + newList[2].playerName + newList[2].score;
+        m_rankingText.text = "1." + newList[0].playerName + ": " + newList[0].score
+            + "\n2." + newList[1].playerName + ": " + newList[1].score
+            + "\n3." + newList[2].playerName + ": " + newList[2].score;
 
         //セーブ
         StreamWriter writer1;
