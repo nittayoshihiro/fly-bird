@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FrameFixed : MonoBehaviour
 {
-    static void OnRuntimeMethodLoad()
+   void Start()
     {
         Screen.SetResolution(400, 640, false, 60);
     }

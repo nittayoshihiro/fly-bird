@@ -9,7 +9,7 @@ public class Result : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_scoreText;
     [SerializeField] TextMeshProUGUI m_rankText;
-    [SerializeField] TextMeshProUGUI m_rankingText;
+    [SerializeField] Text m_rankingText;
     [SerializeField] GameObject m_enter;
     [SerializeField] GameObject m_inputFineld;
     [SerializeField] GameObject m_panel;
